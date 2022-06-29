@@ -4,7 +4,7 @@
 #
 Name     : R-collapse
 Version  : 1.8.6
-Release  : 6
+Release  : 7
 URL      : https://cran.r-project.org/src/contrib/collapse_1.8.6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/collapse_1.8.6.tar.gz
 Summary  : Advanced and Fast Data Transformation
