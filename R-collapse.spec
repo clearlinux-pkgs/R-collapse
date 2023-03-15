@@ -4,7 +4,7 @@
 #
 Name     : R-collapse
 Version  : 1.9.3
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/collapse_1.9.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/collapse_1.9.3.tar.gz
 Summary  : Advanced and Fast Data Transformation
