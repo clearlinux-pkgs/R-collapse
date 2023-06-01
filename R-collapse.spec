@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-collapse
-Version  : 1.9.5
-Release  : 19
-URL      : https://cran.r-project.org/src/contrib/collapse_1.9.5.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/collapse_1.9.5.tar.gz
+Version  : 1.9.6
+Release  : 20
+URL      : https://cran.r-project.org/src/contrib/collapse_1.9.6.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/collapse_1.9.6.tar.gz
 Summary  : Advanced and Fast Data Transformation
 Group    : Development/Tools
 License  : GPL-2.0+
@@ -43,16 +43,19 @@ lib components for the R-collapse package.
 
 %prep
 %setup -q -n collapse
+pushd ..
+cp -a collapse buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680910796
+export SOURCE_DATE_EPOCH=1685641140
 
 %install
-export SOURCE_DATE_EPOCH=1680910796
+export SOURCE_DATE_EPOCH=1685641140
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -90,6 +93,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc . || :
 
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -114,6 +118,9 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/collapse/data/Rdata.rdx
 /usr/lib64/R/library/collapse/doc/collapse_documentation.Rmd
 /usr/lib64/R/library/collapse/doc/collapse_documentation.html
+/usr/lib64/R/library/collapse/doc/collapse_object_handling.R
+/usr/lib64/R/library/collapse/doc/collapse_object_handling.Rmd
+/usr/lib64/R/library/collapse/doc/collapse_object_handling.html
 /usr/lib64/R/library/collapse/doc/index.html
 /usr/lib64/R/library/collapse/help/AnIndex
 /usr/lib64/R/library/collapse/help/aliases.rds
@@ -166,6 +173,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/collapse/tests/testthat/test-splitting.R
 /usr/lib64/R/library/collapse/tests/testthat/test-varying.R
 /usr/lib64/R/library/collapse/tests/testthat/test-whichv.R
+/usr/lib64/R/library/collapse/tests/testthat/testthat-problems.rds
 
 %files lib
 %defattr(-,root,root,-)
