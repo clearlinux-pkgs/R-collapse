@@ -6,10 +6,10 @@
 # autospec commit: f032afc
 #
 Name     : R-collapse
-Version  : 2.0.2
-Release  : 22
-URL      : https://cran.r-project.org/src/contrib/collapse_2.0.2.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/collapse_2.0.2.tar.gz
+Version  : 2.0.3
+Release  : 23
+URL      : https://cran.r-project.org/src/contrib/collapse_2.0.3.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/collapse_2.0.3.tar.gz
 Summary  : Advanced and Fast Data Transformation
 Group    : Development/Tools
 License  : GPL-2.0+
@@ -54,10 +54,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1697559815
+export SOURCE_DATE_EPOCH=1697642357
 
 %install
-export SOURCE_DATE_EPOCH=1697559815
+export SOURCE_DATE_EPOCH=1697642357
 rm -rf %{buildroot}
 LANG=C.UTF-8
 CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -O3 -flto -fno-semantic-interposition "
