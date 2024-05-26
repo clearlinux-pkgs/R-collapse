@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : R-collapse
-Version  : 2.0.13
-Release  : 32
-URL      : https://cran.r-project.org/src/contrib/collapse_2.0.13.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/collapse_2.0.13.tar.gz
+Version  : 2.0.14
+Release  : 33
+URL      : https://cran.r-project.org/src/contrib/collapse_2.0.14.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/collapse_2.0.14.tar.gz
 Summary  : Advanced and Fast Data Transformation
 Group    : Development/Tools
 License  : GPL-2.0+
@@ -33,7 +33,7 @@ statistical computing in R that is extremely fast, class-agnostic, robust and
     (grouped, weighted) summary statistics, powerful tools to work with nested data, 
     fast data object conversions, functions for memory efficient R programming, and 
     helpers to effectively deal with variable labels, attributes, and missing data. 
-    It is well integrated with base R classes, 'dplyr'/'tibble', 'data.table', 'sf', 
+    It is well integrated with base R classes, 'dplyr'/'tibble', 'data.table', 'sf', 'units', 
     'plm' (panel-series and data frames), and 'xts'/'zoo'.
 
 %package lib
@@ -61,10 +61,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713136441
+export SOURCE_DATE_EPOCH=1716761572
 
 %install
-export SOURCE_DATE_EPOCH=1713136441
+export SOURCE_DATE_EPOCH=1716761572
 rm -rf %{buildroot}
 LANG=C.UTF-8
 CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -131,6 +131,8 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/collapse/data/Rdata.rdb
 /usr/lib64/R/library/collapse/data/Rdata.rds
 /usr/lib64/R/library/collapse/data/Rdata.rdx
+/usr/lib64/R/library/collapse/doc/collapse_and_sf.Rmd
+/usr/lib64/R/library/collapse/doc/collapse_and_sf.html
 /usr/lib64/R/library/collapse/doc/collapse_documentation.Rmd
 /usr/lib64/R/library/collapse/doc/collapse_documentation.html
 /usr/lib64/R/library/collapse/doc/collapse_for_tidyverse_users.R
