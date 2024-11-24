@@ -6,16 +6,17 @@
 # autospec commit: 5424026
 #
 Name     : R-collapse
-Version  : 2.0.17
-Release  : 37
-URL      : https://ftp.osuosl.org/pub/cran/src/contrib/collapse_2.0.17.tar.gz
-Source0  : https://ftp.osuosl.org/pub/cran/src/contrib/collapse_2.0.17.tar.gz
+Version  : 2.0.18
+Release  : 38
+URL      : https://ftp.osuosl.org/pub/cran/src/contrib/collapse_2.0.18.tar.gz
+Source0  : https://ftp.osuosl.org/pub/cran/src/contrib/collapse_2.0.18.tar.gz
 Summary  : Advanced and Fast Data Transformation
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-collapse-lib = %{version}-%{release}
 Requires: R-Rcpp
 BuildRequires : R-Rcpp
+BuildRequires : R-Rcpp-dev
 BuildRequires : buildreq-R
 
 %description
@@ -58,10 +59,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1731638324
+export SOURCE_DATE_EPOCH=1732470339
 
 %install
-export SOURCE_DATE_EPOCH=1731638324
+export SOURCE_DATE_EPOCH=1732470339
 rm -rf %{buildroot}
 LANG=C.UTF-8
 CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -O3 -flto -fno-semantic-interposition "
