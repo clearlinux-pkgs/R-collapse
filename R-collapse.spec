@@ -6,16 +6,17 @@
 # autospec commit: fbbd4e3
 #
 Name     : R-collapse
-Version  : 2.0.19
-Release  : 40
-URL      : https://ftp.osuosl.org/pub/cran/src/contrib/collapse_2.0.19.tar.gz
-Source0  : https://ftp.osuosl.org/pub/cran/src/contrib/collapse_2.0.19.tar.gz
+Version  : 2.1.0
+Release  : 41
+URL      : https://ftp.osuosl.org/pub/cran/src/contrib/collapse_2.1.0.tar.gz
+Source0  : https://ftp.osuosl.org/pub/cran/src/contrib/collapse_2.1.0.tar.gz
 Summary  : Advanced and Fast Data Transformation
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-collapse-lib = %{version}-%{release}
 Requires: R-Rcpp
 BuildRequires : R-Rcpp
+BuildRequires : R-dplyr
 BuildRequires : buildreq-R
 
 %description
@@ -58,10 +59,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1740090166
+export SOURCE_DATE_EPOCH=1742469684
 
 %install
-export SOURCE_DATE_EPOCH=1740090166
+export SOURCE_DATE_EPOCH=1742469684
 rm -rf %{buildroot}
 LANG=C.UTF-8
 CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -174,6 +175,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/collapse/tests/testthat/test-fprod.R
 /usr/lib64/R/library/collapse/tests/testthat/test-fquantile.R
 /usr/lib64/R/library/collapse/tests/testthat/test-fscale-STD.R
+/usr/lib64/R/library/collapse/tests/testthat/test-fslice.R
 /usr/lib64/R/library/collapse/tests/testthat/test-fsubset-ftransform.R
 /usr/lib64/R/library/collapse/tests/testthat/test-fsum.R
 /usr/lib64/R/library/collapse/tests/testthat/test-fvar-fsd.R
